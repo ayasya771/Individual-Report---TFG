@@ -18,9 +18,11 @@
         .font-heading {
             font-family: 'Montserrat', sans-serif;
         }
-        .bg-pattern { /* Replaced bg-grid with a subtle pattern for light theme */
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L0 40M20 20L40 0M20 20L0 0M20 20L40 40' stroke='%23F0E8D7' stroke-width='1' fill='none'/%3E%3C/svg%3E");
-            background-size: 80px 80px;
+        /* Updated bg-pattern for better GitHub Pages compatibility */
+        .bg-pattern {
+            background-color: #FFF7E6;
+            background-image: radial-gradient(circle at 1px 1px, #F0E8D7 1px, transparent 0);
+            background-size: 15px 15px;
         }
         .accent-glow {
             text-shadow: 0 0 8px #FFABAB, 0 0 16px rgba(255, 171, 171, 0.7); /* Soft Pink glow */
@@ -122,12 +124,15 @@
                     <div class="w-full flex justify-between items-start">
                         <h1 class="text-6xl md:text-8xl font-heading font-extrabold text-[#333333] uppercase tracking-wide">REPORT</h1>
                         <div class="w-40 h-32 bg-[#B39DDB] border-base p-2 flex flex-col items-center justify-center text-center rounded-lg" style="background-color: #B39DDB;">
+                            <div class="w-full h-1/2 bg-[#89CFF0] border-b border-[#333333] flex items-center justify-center text-[#333333] text-sm font-bold uppercase">tribes</div>
+                            <div class="w-full h-1/2 bg-[#B39DDB] flex items-center justify-center text-[#333333] text-sm font-bold uppercase">for GOOD</div>
                         </div>
                     </div>
                     <div class="absolute bottom-4 left-8 text-[#333333] text-xl md:text-2xl font-bold">
-                        ~ Ayasya Kumar Batta
+                        By Ayasya Kumar Batta
                     </div>
                     <div class="absolute right-8 top-1/2 -translate-y-1/2 w-24 h-24 bg-[#89CFF0] border-base flex items-center justify-center text-[#333333] font-heading text-5xl font-extrabold rounded-lg">
+                        S
                     </div>
                      <div class="absolute right-20 top-40 w-24 h-24 bg-[#FFABAB] dot-pattern border-base rounded-lg"></div>
                 </div>
@@ -141,10 +146,12 @@
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-heading text-[#FFC49F] primary-glow">The Critical Unseen</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">This section introduces the core problem this project addresses: the significant gap between technological advancement and public awareness in cybersecurity.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div class="text-center md:text-left">
+                        <p class="text-lg text-[#333333] leading-relaxed">Cyber security and data visualization are vital, rapidly advancing fields required globally. Yet, a staggering portion of the population remains unaware or uneducated in detail about the risks they face daily.</p>
                          <div class="mt-8 bg-[#FFC49F]/30 p-6 rounded-lg border border-[#FFC49F]">
                             <h3 class="font-heading text-2xl text-[#333333]">The Critical Knowledge Gap</h3>
                             <p class="mt-2 text-gray-700">The digital age brings unprecedented innovation but also burgeoning threats. While cyber security and data visualization are foundational to every industry, a vast majority of the global population remains <span class="text-[#FFABAB] font-bold">dangerously uninformed</span> about basic cyber hygiene and the risks associated with their digital footprint.</p>
@@ -163,6 +170,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-heading text-[#FFC49F] primary-glow">Global Cyber Landscape</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">These interactive charts visualize the scale of the problem, showing common threats and the current state of cyber literacy worldwide based on representative data.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-16">
                     <div class="bg-[#FFF7E6] p-6 md:p-8 rounded-xl border border-[#FFC49F]">
@@ -185,6 +193,7 @@
              <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-heading text-[#FFC49F] primary-glow">Project Journey</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">This section outlines the key milestones and fieldwork undertaken for this project. Click on a timeline event to see the details of the work performed.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
@@ -237,6 +246,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-5xl font-heading text-[#FFC49F] primary-glow">Impact & Future</h2>
+                    <p class="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">This final section synthesizes the project's value, outcomes, and future potential. Use the tabs below to explore why this work matters, the results achieved, and what lies ahead.</p>
                 </div>
                  <div class="max-w-4xl mx-auto">
                     <div class="mb-6 flex flex-wrap justify-center border-b border-[#FFC49F]">
@@ -327,6 +337,7 @@
     <footer class="bg-[#FFF7E6] py-8">
         <div class="container mx-auto px-6 text-center text-gray-700">
             <p>&copy; 2025 Ayasya Kumar Batta. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Interactive report generated for project submission.</p>
         </div>
     </footer>
 
