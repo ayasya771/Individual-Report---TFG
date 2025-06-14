@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-foreground;
+}
+
+@layer base {
+  :root {
+    --background: 39 100% 95%; /* #FFF7E6 */
+    --foreground: 0 0% 20%; /* #333333 */
+
+    --card: 39 100% 95%; 
+    --card-foreground: 0 0% 20%;
+
+    --popover: 39 100% 95%;
+    --popover-foreground: 0 0% 20%;
+
+    --primary: 28 100% 81%; /* #FFC49F */
+    --primary-foreground: 0 0% 20%;
+
+    --secondary: 39 48% 90%; /* #F0E8D7 */
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 39 48% 90%; /* #F0E8D7 */
+    --muted-foreground: 0 0% 35%; /* Adjusted for better contrast */
+
+    --accent: 0 100% 84%; /* #FFABAB */
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%; /* #333333 for .border-base */
+    --input: 39 48% 85%;
+    --ring: 28 100% 81%; /* Primary for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Custom colors from HTML */
+    --lavender-hsl: 262 44% 73%;
+    --light-blue-hsl: 204 79% 76%;
+    --hero-layer-blue-hsl: 210 100% 85%;
+    --section-bg-why-hsl: 0 0% 97%;
+    
+    --primary-glow-color: 28, 100%, 81%; /* For text-shadow */
+    --accent-glow-color: 0, 100%, 84%;   /* For text-shadow */
+  }
+
+  .dark {
+    /* Define dark theme if necessary, current design is light-themed */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 28 100% 75%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 39 40% 80%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 39 40% 80%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 100% 78%;
+    --accent-foreground: 0 0% 10%;
+    --border: 0 0% 30%;
+    --input: 0 0% 20%;
+    --ring: 28 100% 75%;
+
+    --lavender-hsl: 262 40% 65%;
+    --light-blue-hsl: 204 70% 70%;
+    --hero-layer-blue-hsl: 210 90% 78%;
+    --section-bg-why-hsl: 0 0% 15%;
+
+    --primary-glow-color: 28, 100%, 75%;
+    --accent-glow-color: 0, 100%, 78%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .bg-pattern {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--muted)) 1px, transparent 0);
+    background-size: 15px 15px;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(hsl(var(--accent)) 15%, transparent 15%);
+    background-size: 10px 10px;
+  }
+
+  .accent-glow {
+    text-shadow: 0 0 8px hsla(var(--accent-glow-color), 1), 0 0 16px hsla(var(--accent-glow-color), 0.7);
+  }
+  .primary-glow {
+    text-shadow: 0 0 8px hsla(var(--primary-glow-color), 1), 0 0 16px hsla(var(--primary-glow-color), 0.7);
+  }
+
+  .nav-link {
+    @apply relative transition-colors duration-300 ease-in-out;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute w-0 h-[2px] bottom-[-4px] left-1/2 bg-accent transition-all duration-300 ease-in-out;
+    transform: translateX(-50%);
+  }
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-[-31px] top-1/2 w-5 h-5 rounded-full border-4 transition-all duration-300 ease-in-out;
+    background-color: hsl(var(--primary));
+    border-color: hsl(var(--secondary)); /* Lighter border for light background */
+    transform: translateY(-50%);
+  }
+  .timeline-item.interactive:hover::before {
+    background-color: hsl(var(--accent)); /* Soft Pink hover */
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  .border-base {
+    @apply border-2 border-foreground;
+  }
+}
+
+/* Specific background colors using CSS variables for inline styles or components */
+.bg-lavender { background-color: hsl(var(--lavender-hsl)); }
+.bg-light-blue { background-color: hsl(var(--light-blue-hsl)); }
+.bg-hero-layer-blue { background-color: hsl(var(--hero-layer-blue-hsl)); }
+.bg-section-why { background-color: hsl(var(--section-bg-why-hsl)); }
